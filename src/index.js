@@ -4,5 +4,24 @@ import './index.css';
 import App from './components/App/App';
 import registerServiceWorker from './registerServiceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+// ---- Redux Stuff ---- //
+import { createStore, combineReducers} from 'redux';
+import { Provider } from 'react-redux';
+
+const feelingsReducer = (state=[],action)=>{
+    if(action.type === 'SET_PIZZA'){
+        state=action.payload
+    }    
+    return state
+}
+
+
+
+const storeInstance = createStore(
+    combineReducers({
+        feelingsReducer
+    }),
+);
+
+ReactDOM.render(<Provider store={storeInstance}><App /></Provider>, document.getElementById('root'));
 registerServiceWorker();
