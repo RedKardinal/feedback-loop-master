@@ -5,21 +5,33 @@ import App from './components/App/App';
 import registerServiceWorker from './registerServiceWorker';
 
 // ---- Redux Stuff ---- //
-import { createStore, combineReducers} from 'redux';
+import { createStore, combineReducers } from 'redux';
 import { Provider } from 'react-redux';
 
-const feelingsReducer = (state=[],action)=>{
-    if(action.type === 'SET_PIZZA'){
-        state=action.payload
-    }    
-    return state
-}
-
-
+const feedbackReducer = (state = [], action) => {
+    switch (action.type) {
+        case 'SET_FEELINGS':
+            state = [...state, action.payload]
+            return state
+        case 'SET_UNDERSTANDING':
+            state = [...state, action.payload]
+            return state
+        case 'SET_SUPPORT':
+            state = [...state, action.payload]
+            return state
+        case 'SET_COMMENTS':
+            state = [...state, action.payload]
+            return state
+        case 'CLEAR':
+            state = []
+            return state
+        default: return state
+    } // END switch
+} // END feedbackReducer
 
 const storeInstance = createStore(
     combineReducers({
-        feelingsReducer
+        feedbackReducer
     }),
 );
 

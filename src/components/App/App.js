@@ -6,6 +6,7 @@ import {connect} from 'react-redux';
 // ---- Bring in Routers ---- //
 import {HashRouter as Router, Route, Link} from 'react-router-dom';
 // ---- Connect Pages to App.js ---- //
+import Home from '../Home/Home';
 import Feelings from '../Feelings/Feelings';
 import Understanding from '../Understanding/Understanding';
 import Support from '../Support/Support';
@@ -21,12 +22,8 @@ class App extends Component {
           <h1 className="App-title">Feedback!</h1>
           <h4><i>Don't forget it!</i></h4>
         </header>
-        <div className="appPage">
-          <h2>Remember! Be as critical and you possibly can be.</h2>
-            <br/>
-              <Link to='/Feelings'><button>Let's Begin!</button></Link>        
-        </div>
         <br/>
+        <Route path='/' exact render={() => <Home/>}/>
         <Route path='/Feelings' exact render={() => <Feelings/>}/>
         <Route path='/Understanding' exact render={()=><Understanding/>}/>
         <Route path='/Support' render={()=><Support/>}/>
