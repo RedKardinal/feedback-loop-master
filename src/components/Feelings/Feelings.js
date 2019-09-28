@@ -7,7 +7,7 @@ import { HashRouter as Router, Link } from 'react-router-dom';
 class Feelings extends Component {
 
   state = {
-    feelings: '1'
+    feelings: '3'
   }
 
   handleChange = (event) => {
@@ -29,13 +29,29 @@ class Feelings extends Component {
             Feelings...
             </h2>
           <div>
-            <select onChange={this.handleChange} value={this.state.feelings}>
+          <div onChange={this.handleChange} value={this.state.feelings}>
+          <input type="radio" id="1" name="feelings" value="1"/>
+          <label for="1">Awful</label>
+
+          <input type="radio" id="2" name="feelings" value="2"/>
+          <label for="2">Not Good</label>
+
+          <input type="radio" id="3" name="feelings" value="3"/>
+          <label for="3">Ok</label>
+
+          <input type="radio" id="4" name="feelings" value="4"/>
+          <label for="4">Pretty Good</label>
+
+          <input type="radio" id="5" name="feelings" value="5"/>
+          <label for="5">Great!</label>
+          </div>
+            {/* <select onChange={this.handleChange} value={this.state.feelings}>
               <option value="1">I feel terrible.</option>
               <option value="2">I feel bad.</option>
               <option value="3">I feel meh...</option>
               <option value="4">I feel good.</option>
               <option value="5">I feel Amazing.</option>
-            </select>
+            </select> */}
           </div>
           <br />
           <Link to='/Understanding'><button onClick={this.handleClick}>On to Understanding</button></Link>

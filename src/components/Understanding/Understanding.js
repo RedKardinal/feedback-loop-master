@@ -5,7 +5,7 @@ import {HashRouter as Router, Link} from 'react-router-dom';
 
 class Understanding extends Component {
   state = {
-    understanding: '1'
+    understanding: '3'
   }
   
   handleChange = (event) => {

@@ -8,7 +8,7 @@ import {HashRouter as Router, Link} from 'react-router-dom';
 class Support extends Component {
 
   state = {
-    support: '1'
+    support: '3'
   }
   
   handleChange = (event) => {
