@@ -4,6 +4,15 @@ import { connect } from 'react-redux';
 // import axios from 'axios';
 import { HashRouter as Router, Link } from 'react-router-dom';
 
+
+// ------ MATERIAL UI --------- //
+
+import Radio from '@material-ui/core/Radio';
+import RadioGroup from '@material-ui/core/RadioGroup';
+
+
+// MATERIAL UI
+
 class Feelings extends Component {
 
   state = {
@@ -29,7 +38,7 @@ class Feelings extends Component {
             Feelings...
             </h2>
           <div>
-          <div onChange={this.handleChange} value={this.state.feelings}>
+          <div onChange={this.handleChange} value={this.state.feelings} className="feelingsB">
           <input type="radio" id="1" name="feelings" value="1"/>
           <label for="1">Awful</label>
 

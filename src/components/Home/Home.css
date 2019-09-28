@@ -5,7 +5,9 @@
 .main {
     border: black 1px;
     margin: 20px; 
-    background-color: bisque
+    background-color: blue;
+    padding: 20px;
+    border-radius: 25px;
 }
 .footer {
     position: absolute;

@@ -12,6 +12,7 @@ import Understanding from '../Understanding/Understanding';
 import Support from '../Support/Support';
 import Comments from '../Comments/Comments';
 import Submit from '../Submit/Submit';
+import Radios from '../Radios/Radios';
 
 class App extends Component {
   render() {
@@ -29,6 +30,7 @@ class App extends Component {
         <Route path='/Support' render={()=><Support/>}/>
         <Route path='/Comments' render={()=><Comments/>}/>
         <Route path='/Submit' render={()=><Submit/>}/>
+        <Route path='/Radios' render={()=><Radios/>}/>
       </div>
       <footer></footer>
       </Router>
