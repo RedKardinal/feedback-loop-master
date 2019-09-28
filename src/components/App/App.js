@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import axios from 'axios';
+// import axios from 'axios';
 import './App.css';
 // ---- Connect Redux ---- //
 import {connect} from 'react-redux';
 // ---- Bring in Routers ---- //
-import {HashRouter as Router, Route, Link} from 'react-router-dom';
+import {HashRouter as Router, Route} from 'react-router-dom';
 // ---- Connect Pages to App.js ---- //
 import Home from '../Home/Home';
 import Feelings from '../Feelings/Feelings';
@@ -30,6 +30,7 @@ class App extends Component {
         <Route path='/Comments' render={()=><Comments/>}/>
         <Route path='/Submit' render={()=><Submit/>}/>
       </div>
+      <footer></footer>
       </Router>
     );
   }

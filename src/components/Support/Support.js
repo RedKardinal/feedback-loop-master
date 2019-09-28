@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import {HashRouter as Router, Link} from 'react-router-dom';
 
 
+
 class Support extends Component {
 
   state = {
@@ -31,7 +32,7 @@ class Support extends Component {
             </h2>
           <div>
             <select onChange={this.handleChange} value={this.state.support}>
-              <option value="1">I Suck.</option>
+              <option value="1">I need help.</option>
               <option value="2">I feel bad.</option>
               <option value="3">I feel meh...</option>
               <option value="4">I feel good.</option>

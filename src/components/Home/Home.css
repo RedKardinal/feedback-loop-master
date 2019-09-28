@@ -1,0 +1,14 @@
+
+.header {
+    border: 5px solid black;
+}
+.main {
+    border: black 1px;
+    margin: 20px; 
+    background-color: bisque
+}
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}

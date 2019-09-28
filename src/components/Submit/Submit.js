@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import axios from 'axios';
-import { HashRouter as Router, Link } from 'react-router-dom';
+import {HashRouter as Router, Link} from 'react-router-dom';
 
 
 
@@ -24,6 +24,7 @@ class Submit extends Component {
 
   render() {
     return (
+      <Router>
       <div className="submit">
         <h2>
           Thank You!
@@ -46,6 +47,7 @@ class Submit extends Component {
           Wow, thanks...
             </h2>
       </div>
+      </Router>
     );
   }
 }
