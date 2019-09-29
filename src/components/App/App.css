@@ -11,7 +11,9 @@
 
 }
 .App-title {
-  font-size: 1.5em;
+  font-size: 50px;
+  margin: 0;
+  padding: 0;
 }
 .App-intro {
   font-size: large;
@@ -24,6 +26,12 @@ body {
 body.fade-out {
   opacity: 0;
   transition: none;
+}
+.photoGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 50px 0px;
+  -ms-grid-row-align: center;
 }
 
 
