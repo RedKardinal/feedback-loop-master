@@ -3,14 +3,11 @@
     border: 5px solid black;
 }
 .main {
-    border: black 1px;
+    vertical-align: middle;
+    border: #2c003e 5px outset;
     margin: 20px; 
-    background-color: blue;
+    background-color: #51dacf;
     padding: 20px;
     border-radius: 25px;
-}
-.footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
+    box-shadow: 5px 10px;
 }
