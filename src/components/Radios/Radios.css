@@ -1,7 +1,9 @@
 body {
     background-color: #d2fafb;
 }
-
+.question {
+    margin-top: 10px;
+}
 .mainBox {
     vertical-align: middle;
     border: #2c003e 5px outset;
@@ -10,10 +12,23 @@ body {
     padding: 20px;
     border-radius: 25px;
     box-shadow: 5px 10px;
-
 }
-.question {
-    margin-top: 10px;
+.row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 50px 50px;
+    -ms-grid-row-align: center;
+}
+.col1 {
+    /* width: 5%; */
+    text-align: right;
+}
+.operators {
+    width: 100%;
+}
+.col2 {
+    /* width: 5%; */
+    text-align: left;
 }
 .boxFooter {
     padding: 20px;

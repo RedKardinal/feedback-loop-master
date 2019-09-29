@@ -13,6 +13,9 @@ import Support from '../Support/Support';
 import Comments from '../Comments/Comments';
 import Submit from '../Submit/Submit';
 import Radios from '../Radios/Radios';
+// ---- Material UI ---- //
+import 'typeface-roboto';
+
 
 class App extends Component {
   render() {

@@ -1,14 +1,11 @@
+// ---- Import Redux, Routers, & React ---- //
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-// import './Checkout.css';
-// import axios from 'axios';
 import { HashRouter as Router, Link } from 'react-router-dom';
 
+// ---- Import CSS ---- //
 
 // ------ MATERIAL UI --------- //
-
-import Radio from '@material-ui/core/Radio';
-import RadioGroup from '@material-ui/core/RadioGroup';
 
 
 // MATERIAL UI
