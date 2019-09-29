@@ -14,6 +14,8 @@
   font-size: 50px;
   margin: 0;
   padding: 0;
+  margin-bottom: 100px;
+  margin-top: 10px;
 }
 .App-intro {
   font-size: large;
@@ -29,7 +31,7 @@ body.fade-out {
 }
 .photoGrid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 2fr 1fr;
   grid-template-rows: 50px 0px;
   -ms-grid-row-align: center;
 }

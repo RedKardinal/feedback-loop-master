@@ -1,10 +1,9 @@
+// ---- Import Redux, Routers, & React ---- //
 import React, { Component } from 'react';
-// import axios from 'axios';
-import './App.css';
-// ---- Connect Redux ---- //
-import { connect } from 'react-redux';
-// ---- Bring in Routers ---- //
 import { HashRouter as Router, Route } from 'react-router-dom';
+import { connect } from 'react-redux';
+// ---- Import CSS ---- //
+import './App.css';
 // ---- Connect Pages to App.js ---- //
 import Home from '../Home/Home';
 import Feelings from '../Feelings/Feelings';
@@ -21,29 +20,28 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-            <header className="App-header">
+          <header className="App-header">
             <div className="photoGrid">
               <img src={require('./plogo.jpg')} alt="Prime Logo" width="120" height="120" />
-              <h1 className="App-title">Feedback!</h1>
+              <h1 className="App-title">Daily Feedback</h1>
             </div>
             <h4><i>Don't forget it!</i></h4>
-
-        </header>
+          </header>
           <br />
-          <Route path='/' exact render={() => <Home />} />
-          <Route path='/Feelings' exact render={() => <Feelings />} />
-          <Route path='/Understanding' exact render={() => <Understanding />} />
-          <Route path='/Support' render={() => <Support />} />
-          <Route path='/Comments' render={() => <Comments />} />
-          <Route path='/Submit' render={() => <Submit />} />
-          <Route path='/Finished' render={() => <Finished />} />
+          <div className="routes">
+            <Route path='/' exact render={() => <Home />} />
+            <Route path='/Feelings' exact render={() => <Feelings />} />
+            <Route path='/Understanding' exact render={() => <Understanding />} />
+            <Route path='/Support' render={() => <Support />} />
+            <Route path='/Comments' render={() => <Comments />} />
+            <Route path='/Submit' render={() => <Submit />} />
+            <Route path='/Finished' render={() => <Finished />} />
+          </div>
         </div>
-        <footer></footer>
       </Router>
     );
-  }
-}
-
+  } // end render
+} // end App Component
 
 const mapReduxStoreToProps = (reduxStore) => ({
   reduxStore

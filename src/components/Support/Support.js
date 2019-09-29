@@ -71,12 +71,12 @@ class Support extends Component {
       <Router>
         <div className="mainBox">
           <div className="question">
-            <h2>Do you feel the instructors support you?</h2>
+            <h2>Do you feel the instructors are supporting you?</h2>
           </div>
           <br />
           <div className="row">
             <div className="col1">
-              <h3>I'm not supported</h3>
+              <h3>I'm not supported at all.</h3>
             </div>
             <div className="operators">
               <Radio
@@ -88,8 +88,7 @@ class Support extends Component {
                 classes={{
                   root: classes.awful,
                   checked: classes.checked,
-                }}
-              />
+                }}/>
               <Radio
                 checked={this.state.support === '2'}
                 onChange={this.handleChange}
@@ -99,8 +98,7 @@ class Support extends Component {
                 classes={{
                   root: classes.bad,
                   checked: classes.checked,
-                }}
-              />
+                }}/>
               <Radio
                 checked={this.state.support === '3'}
                 onChange={this.handleChange}
@@ -110,8 +108,7 @@ class Support extends Component {
                 classes={{
                   root: classes.ok,
                   checked: classes.checked,
-                }}
-              />
+                }}/>
               <Radio
                 checked={this.state.support === '4'}
                 onChange={this.handleChange}
@@ -122,8 +119,7 @@ class Support extends Component {
                 classes={{
                   root: classes.good,
                   checked: classes.checked,
-                }}
-              />
+                }}/>
               <Radio
                 checked={this.state.support === '5'}
                 onChange={this.handleChange}
@@ -134,11 +130,10 @@ class Support extends Component {
                 classes={{
                   root: classes.great,
                   checked: classes.checked,
-                }}
-              />
+                }}/>
             </div>
             <div className="col2">
-              <h3>I'm fully supported</h3>
+              <h3>I'm fully supported!</h3>
             </div>
           </div>
           <div className="buttons">
@@ -152,71 +147,7 @@ class Support extends Component {
   } // end render
 } // end Support Componenet
 
-
 const mapReduxStoreToProps = (reduxStore) => ({
   reduxStore
 });
-
 export default withStyles(styles)(connect(mapReduxStoreToProps)(Support));
-
-
-
-
-// import React, { Component } from 'react';
-// import { connect } from 'react-redux';
-// // import axios from 'axios';
-// import {HashRouter as Router, Link} from 'react-router-dom';
-
-
-
-// class Support extends Component {
-
-//   state = {
-//     support: '3'
-//   }
-
-//   handleChange = (event) => {
-//     this.setState({
-//       support: event.target.value
-//     })
-//   }
-
-//   handleClick = (event) => {
-//     this.props.dispatch({ type: 'SET_SUPPORT', payload: this.state.support })
-//     console.log('From Feeling', this.state.support);
-//   }
-
-
-//     render() {
-//       return (
-//         <Router>
-//         <div className="homePage">
-//           <h2>
-//             Understanding...
-//             </h2>
-//           <div>
-//             <select onChange={this.handleChange} value={this.state.support}>
-//               <option value="1">I need help.</option>
-//               <option value="2">I feel bad.</option>
-//               <option value="3">I feel meh...</option>
-//               <option value="4">I feel good.</option>
-//               <option value="5">I feel Amazing.</option>
-//             </select>
-//           </div>
-//           <br />
-//           <Link to='/Comments'><button onClick={this.handleClick}>On to Comments</button></Link>
-//           <h2>
-//             Understanding
-//           </h2>
-//         </div>
-//       </Router>
-//       );
-//     }
-//   }
-
-
-
-// const mapReduxStoreToProps = (reduxStore) => ({
-//     reduxStore
-// });
-// export default connect(mapReduxStoreToProps)(Support);

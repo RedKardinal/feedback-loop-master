@@ -22,22 +22,23 @@ const theme = createMuiTheme({
 });
 // ---- Submit Component Below ---- //
 class Submit extends Component {
-  
+
   componentDidMount = () => {
     console.log(this.props.reduxStore.cartReducer);
   }
- 
+
   submitPOST = () => {
     console.log('Submit button clicked!', this.props.reduxStore.cartReducer);
     let feedbackData = this.props.reduxStore.feedbackReducer
     // 
     axios.post('/feedback', feedbackData)
       .then((response) => {
-        console.log('Checkout Page', response);
+        console.log('Submit Page', response);
 
       }).catch(error => {
-        console.log('Error in the POST checkout', error);
+        console.log('Error in the POST submit', error);
       })
+    // clear reducer fields
     this.props.dispatch({ type: 'CLEAR' })
   } // end submitPOST
 
@@ -61,9 +62,9 @@ class Submit extends Component {
             <h3>
               Comments: {this.props.reduxStore.feedbackReducer[3]}
             </h3>
-            <br />
+            <br/>
             <div className="buttons">
-            <Link to='/Finished'><Button onClick={this.submitPOST} variant='contained' color="primary">Submit</Button></Link>
+              <Link to='/Finished'><Button onClick={this.submitPOST} variant='contained' color="primary">Submit</Button></Link>
             </div>
           </div>
         </MuiThemeProvider>

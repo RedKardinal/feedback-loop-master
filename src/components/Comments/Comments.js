@@ -46,25 +46,22 @@ class Support extends Component {
         <MuiThemeProvider theme={theme}>
           <div className="main">
             <h2>
-              Leave a comment about the week or your concerns.
+              Leave a comment about the day's material or your concerns.
             </h2>
             <div>
-            <TextField onChange={this.handleChange} value={this.state.comments}
-              id="outlined-multiline-static"
-              label="Comments"
-              multiline
-              fullWidth
-              rows="4"
-              // defaultValue=""
-              // className={classes.textField}
-              margin="normal"
-              variant="outlined"
+              <TextField onChange={this.handleChange} value={this.state.comments}
+                id="outlined-multiline-static"
+                label="Comments"
+                multiline
+                fullWidth
+                rows="4"
+                margin="normal"
+                variant="outlined"
               />
-              {/* <input onChange={this.handleChange} value={this.state.comments} /> */}
             </div>
-            <br/>
+            <br />
             <div className="buttons">
-            <Link to='/Submit'><Button variant='contained' color="primary" disabled={this.state.button} onClick={this.handleClick}>Next</Button></Link>
+              <Link to='/Submit'><Button variant='contained' color="primary" disabled={this.state.button} onClick={this.handleClick}>Next</Button></Link>
             </div>
           </div>
         </MuiThemeProvider>

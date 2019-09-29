@@ -72,7 +72,7 @@ class Understanding extends Component {
           <div className="question">
             <h2>How well are you understanding today's material?</h2>
           </div>
-          <br/>
+          <br />
           <div className="row">
             <div className="col1">
               <h3>I don't understand</h3>
@@ -87,8 +87,7 @@ class Understanding extends Component {
                 classes={{
                   root: classes.awful,
                   checked: classes.checked,
-                }}
-              />
+                }}/>
               <Radio
                 checked={this.state.understanding === '2'}
                 onChange={this.handleChange}
@@ -98,8 +97,7 @@ class Understanding extends Component {
                 classes={{
                   root: classes.bad,
                   checked: classes.checked,
-                }}
-              />
+                }}/>
               <Radio
                 checked={this.state.understanding === '3'}
                 onChange={this.handleChange}
@@ -109,8 +107,7 @@ class Understanding extends Component {
                 classes={{
                   root: classes.ok,
                   checked: classes.checked,
-                }}
-              />
+                }}/>
               <Radio
                 checked={this.state.understanding === '4'}
                 onChange={this.handleChange}
@@ -121,8 +118,7 @@ class Understanding extends Component {
                 classes={{
                   root: classes.good,
                   checked: classes.checked,
-                }}
-              />
+                }}/>
               <Radio
                 checked={this.state.understanding === '5'}
                 onChange={this.handleChange}
@@ -133,11 +129,10 @@ class Understanding extends Component {
                 classes={{
                   root: classes.great,
                   checked: classes.checked,
-                }}
-              />
+                }}/>
             </div>
             <div className="col2">
-              <h3>I completely understand</h3>
+              <h3>I've completely understand</h3>
             </div>
           </div>
           <div className="buttons">
@@ -151,64 +146,7 @@ class Understanding extends Component {
   } // end render
 } // end Undstanding Componenet
 
-
 const mapReduxStoreToProps = (reduxStore) => ({
   reduxStore
 });
-
 export default withStyles(styles)(connect(mapReduxStoreToProps)(Understanding));
-
-// import React, { Component } from 'react';
-// import { connect } from 'react-redux';
-// // import axios from 'axios';
-// import {HashRouter as Router, Link} from 'react-router-dom';
-
-// class Understanding extends Component {
-//   state = {
-//     understanding: '3'
-//   }
-  
-//   handleChange = (event) => {
-//     this.setState({
-//       understanding: event.target.value
-//     })
-//   }
-  
-//   handleClick = (event) => {
-//     this.props.dispatch({ type: 'SET_UNDERSTANDING', payload: this.state.understanding })
-//     console.log('From Feeling', this.state.understanding);
-//   }
-
-//     render() {
-//       return (
-//       <Router>
-//         <div className="homePage">
-//           <h2>
-//             Understanding...
-//             </h2>
-//           <div>
-//             <select onChange={this.handleChange} value={this.state.understanding}>
-//               <option value="1">I Suck.</option>
-//               <option value="2">I feel bad.</option>
-//               <option value="3">I feel meh...</option>
-//               <option value="4">I feel good.</option>
-//               <option value="5">I feel Amazing.</option>
-//             </select>
-//           </div>
-//           <br />
-//           <Link to='/Support'><button onClick={this.handleClick}>On to Comments</button></Link>
-//           <h2>
-//             Understanding
-//             </h2>
-//         </div>
-//       </Router>
-//       );
-//     }
-//   }
-  
-
-
-// const mapReduxStoreToProps = (reduxStore) => ({
-//     reduxStore
-// });
-// export default connect(mapReduxStoreToProps)(Understanding);
