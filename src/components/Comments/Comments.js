@@ -62,8 +62,10 @@ class Support extends Component {
               />
               {/* <input onChange={this.handleChange} value={this.state.comments} /> */}
             </div>
-            <br />
+            <br/>
+            <div className="buttons">
             <Link to='/Submit'><Button variant='contained' color="primary" disabled={this.state.button} onClick={this.handleClick}>Next</Button></Link>
+            </div>
           </div>
         </MuiThemeProvider>
       </Router>

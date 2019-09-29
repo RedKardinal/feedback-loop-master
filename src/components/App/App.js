@@ -12,11 +12,10 @@ import Understanding from '../Understanding/Understanding';
 import Support from '../Support/Support';
 import Comments from '../Comments/Comments';
 import Submit from '../Submit/Submit';
-// import Radios from '../Radios/Radios';
+import Finished from '../Finished/Finished';
 // ---- Material UI ---- //
 import 'typeface-roboto';
-
-
+// ---- App Component Below ---- //
 class App extends Component {
   render() {
     return (
@@ -33,7 +32,7 @@ class App extends Component {
         <Route path='/Support' render={()=><Support/>}/>
         <Route path='/Comments' render={()=><Comments/>}/>
         <Route path='/Submit' render={()=><Submit/>}/>
-        {/* <Route path='/Radios' render={()=><Radios/>}/> */}
+        <Route path='/Finished' render={()=><Finished/>}/>
       </div>
       <footer></footer>
       </Router>

@@ -19,17 +19,6 @@ body {
     grid-template-rows: 50px 50px;
     -ms-grid-row-align: center;
 }
-.col1 {
-    /* width: 5%; */
-    text-align: right;
-}
-.operators {
-    width: 100%;
-}
-.col2 {
-    /* width: 5%; */
-    text-align: left;
-}
 .boxFooter {
     padding: 20px;
     margin-bottom: 30px;

@@ -73,7 +73,7 @@ class Support extends Component {
           <div className="question">
             <h2>Do you feel the instructors support you?</h2>
           </div>
-          <br/>
+          <br />
           <div className="row">
             <div className="col1">
               <h3>I'm not supported</h3>
@@ -141,7 +141,7 @@ class Support extends Component {
               <h3>I'm fully supported</h3>
             </div>
           </div>
-          <div>
+          <div className="buttons">
             <Link to='/Comments'><Button onClick={this.handleClick} variant='contained' color="primary">Next</Button></Link>
           </div>
           <div className="boxFooter">
@@ -174,13 +174,13 @@ export default withStyles(styles)(connect(mapReduxStoreToProps)(Support));
 //   state = {
 //     support: '3'
 //   }
-  
+
 //   handleChange = (event) => {
 //     this.setState({
 //       support: event.target.value
 //     })
 //   }
-  
+
 //   handleClick = (event) => {
 //     this.props.dispatch({ type: 'SET_SUPPORT', payload: this.state.support })
 //     console.log('From Feeling', this.state.support);
@@ -213,7 +213,7 @@ export default withStyles(styles)(connect(mapReduxStoreToProps)(Support));
 //       );
 //     }
 //   }
-  
+
 
 
 // const mapReduxStoreToProps = (reduxStore) => ({

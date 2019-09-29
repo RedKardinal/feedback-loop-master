@@ -140,7 +140,7 @@ class Understanding extends Component {
               <h3>I completely understand</h3>
             </div>
           </div>
-          <div>
+          <div className="buttons">
             <Link to='/Support'><Button onClick={this.handleClick} variant='contained' color="primary">Next</Button></Link>
           </div>
           <div className="boxFooter">
