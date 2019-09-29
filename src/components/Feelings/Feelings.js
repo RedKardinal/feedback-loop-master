@@ -66,7 +66,7 @@ class Feelings extends Component {
           <Link to='/Understanding'><button onClick={this.handleClick}>On to Understanding</button></Link>
           <h2>
             Is that how you really feel?
-            </h2>
+          </h2>
         </div>
       </Router>
     );
