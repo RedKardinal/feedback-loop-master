@@ -1,11 +1,26 @@
+// ---- Import Redux, Routers Axios, & React ---- //
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import axios from 'axios';
 import {HashRouter as Router, Link} from 'react-router-dom';
-
-
-
-
+// ---- Import CSS ---- //
+import './Submit.css';
+// ---- Material UI ------ // 
+import { createMuiTheme } from '@material-ui/core/styles';
+import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider';
+import { Button } from '@material-ui/core'
+// ---- Material UI Designs ---- //
+const theme = createMuiTheme({
+  palette: {
+    primary: {
+      main: '#4055B2',
+    },
+    secondary: { main: '#4055B2' },
+    contrastThreshold: 3,
+    tonalOffset: 0.2,
+  }
+});
+// ---- Submit Component Below ---- //
 class Submit extends Component {
 
   submitPOST = () => {
@@ -20,39 +35,36 @@ class Submit extends Component {
         console.log('Error in the POST checkout', error);    
     })  
     this.props.dispatch({ type: 'CLEAR' })
-  } // end checkoutOrder
+  } // end submitPOST
 
   render() {
     return (
       <Router>
+        <MuiThemeProvider theme={theme}>
       <div className="submit">
         <h2>
-          Thank You!
-            </h2>
+        Please review your feedback before submitting.  
+        </h2>
         <h3>
-          {this.props.reduxStore.feedbackReducer[0]}
+          Feeling: {this.props.reduxStore.feedbackReducer[0]} / 5
         </h3>
         <h3>
-          {this.props.reduxStore.feedbackReducer[1]}
+          Understanding: {this.props.reduxStore.feedbackReducer[1]} / 5
         </h3>
         <h3>
-          {this.props.reduxStore.feedbackReducer[2]}
+          Support: {this.props.reduxStore.feedbackReducer[2]} / 5
         </h3>
         <h3>
-          {this.props.reduxStore.feedbackReducer[3]}
+          Comments: {this.props.reduxStore.feedbackReducer[3]}
         </h3>
         <br />
-        <Link to='/'><button onClick={this.submitPOST}>Submit</button></Link>
-        <h2>
-          Wow, thanks...
-            </h2>
+        <Link to='/'><Button onClick={this.submitPOST}>Submit</Button></Link>
       </div>
+      </MuiThemeProvider>
       </Router>
     );
-  }
-}
-
-
+  } // end render
+} // end Submit Componenet
 
 const mapReduxStoreToProps = (reduxStore) => ({
   reduxStore
