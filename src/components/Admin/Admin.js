@@ -28,22 +28,6 @@ const CustomTableCell = withStyles(theme => ({
     },
 }))(TableCell);
 
-const styles = theme => ({
-    root: {
-        width: '100%',
-        marginTop: theme.spacing.unit * 3,
-        overflowX: 'auto',
-    },
-    table: {
-        minWidth: 700,
-    },
-    row: {
-        '&:nth-of-type(odd)': {
-            backgroundColor: theme.palette.background.default,
-        },
-    },
-});
-
 const theme = createMuiTheme({
     palette: {
         primary: {
@@ -68,7 +52,7 @@ class Admin extends Component {
     feedbackGET = () => {
         axios.get('/feedback')
             .then((response) => {
-                console.log('Admin Page', response);
+                // console.log('Admin Page', response);
                 this.setState({
                     feedback: response.data
                 })
@@ -99,13 +83,14 @@ class Admin extends Component {
                                         <CustomTableCell align="left">Comments</CustomTableCell>
                                     </TableRow>
                                 </TableHead>
-                                <TableBody className="display">
+                                <TableBody className="display" >
+                                    
                                     {this.state.feedback.map((item) => {
-                                        return (<TableRow key={item.id}>
-                                            <TableCell>{item.feeling}</TableCell>
-                                            <TableCell>{item.understanding}</TableCell>
-                                            <TableCell>{item.support}</TableCell>
-                                            <TableCell>{item.comments}</TableCell>
+                                        return (<TableRow key={item.id} >
+                                            <CustomTableCell >{item.feeling}</CustomTableCell>
+                                            <CustomTableCell>{item.understanding}</CustomTableCell>
+                                            <CustomTableCell>{item.support}</CustomTableCell>
+                                            <CustomTableCell>{item.comments}</CustomTableCell>
                                         </TableRow>)
                                     })}
                                 </TableBody>
@@ -118,7 +103,7 @@ class Admin extends Component {
     } // end render
 } // end Submit Componenet
 
-const mapReduxStoreToProps = (reduxStore) => ({
+const mapStateToProps = (reduxStore) => ({
     reduxStore
-});
-export default withStyles(styles)(connect(mapReduxStoreToProps)(Admin));
+})
+export default connect(mapStateToProps)(Admin);
