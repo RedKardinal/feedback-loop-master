@@ -16,6 +16,7 @@ import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
+import red from '@material-ui/core/colors/red';
 // ---- Material UI Designs ---- //
 
 const CustomTableCell = withStyles(theme => ({
@@ -33,7 +34,7 @@ const theme = createMuiTheme({
         primary: {
             main: '#4055B2',
         },
-        secondary: { main: '#4055B2' },
+        secondary: red,
         contrastThreshold: 3,
         tonalOffset: 0.2,
     }
@@ -81,16 +82,20 @@ class Admin extends Component {
                                         <CustomTableCell align="left">Understanding</CustomTableCell>
                                         <CustomTableCell align="left">Support</CustomTableCell>
                                         <CustomTableCell align="left">Comments</CustomTableCell>
+                                        <CustomTableCell align="left"></CustomTableCell>
+                                        <CustomTableCell align="left"></CustomTableCell>
                                     </TableRow>
                                 </TableHead>
                                 <TableBody className="display" >
                                     
                                     {this.state.feedback.map((item) => {
                                         return (<TableRow key={item.id} >
-                                            <CustomTableCell >{item.feeling}</CustomTableCell>
+                                            <CustomTableCell>{item.feeling}</CustomTableCell>
                                             <CustomTableCell>{item.understanding}</CustomTableCell>
                                             <CustomTableCell>{item.support}</CustomTableCell>
                                             <CustomTableCell>{item.comments}</CustomTableCell>
+                                            <TableCell><Button variant='contained' color="primary">Flag</Button></TableCell>
+                                            <TableCell><Button variant='contained' color="secondary">Delete</Button></TableCell>
                                         </TableRow>)
                                     })}
                                 </TableBody>
