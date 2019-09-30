@@ -19,4 +19,19 @@ router.post('/', (req, res) => {
     });
 }); // end POST
 
+// -------- GET -------- //
+
+router.get('/',(req,res)=>{
+    console.log("GET router", req.body);
+    // Order old to new //
+    const queryText = 'SELECT * FROM "feedback" ORDER BY "id" ASC;';
+    pool.query(queryText)
+    .then((result)=>{
+        res.send(result.rows);
+    }).catch((error)=>{
+        console.log('Error in GET', error);
+        res.sendStatus(500);
+    });
+}); // end GET
+
 module.exports = router;

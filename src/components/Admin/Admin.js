@@ -6,55 +6,119 @@ import { HashRouter as Router, Link } from 'react-router-dom';
 // ---- Import CSS ---- //
 import './Admin.css';
 // ---- Material UI ------ // 
+import { withStyles } from '@material-ui/core/styles';
 import { createMuiTheme } from '@material-ui/core/styles';
 import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider';
 import { Button } from '@material-ui/core'
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
+import Paper from '@material-ui/core/Paper';
 // ---- Material UI Designs ---- //
 
-const theme = createMuiTheme({
-  palette: {
-    primary: {
-      main: '#4055B2',
+const CustomTableCell = withStyles(theme => ({
+    head: {
+        backgroundColor: theme.palette.common.black,
+        color: theme.palette.common.white,
     },
-    secondary: { main: '#4055B2' },
-    contrastThreshold: 3,
-    tonalOffset: 0.2,
-  }
+    body: {
+        fontSize: 14,
+    },
+}))(TableCell);
+
+const styles = theme => ({
+    root: {
+        width: '100%',
+        marginTop: theme.spacing.unit * 3,
+        overflowX: 'auto',
+    },
+    table: {
+        minWidth: 700,
+    },
+    row: {
+        '&:nth-of-type(odd)': {
+            backgroundColor: theme.palette.background.default,
+        },
+    },
 });
-  // ---- Admin Component Below ---- //
-  class Admin extends Component {
-  
-    // submitPOST = () => {
-    //   console.log('Submit button clicked!', this.props.reduxStore.cartReducer);
-    //   let feedbackData = this.props.reduxStore.feedbackReducer
-    //   // 
-    //   axios.post('/feedback', feedbackData)
-    //     .then((response) => {
-    //       console.log('Submit Page', response);
-  
-    //     }).catch(error => {
-    //       console.log('Error in the POST submit', error);
-    //     })
-    //   // clear reducer fields
-    //   this.props.dispatch({ type: 'CLEAR' })
-    // } // end submitPOST
-  
+
+const theme = createMuiTheme({
+    palette: {
+        primary: {
+            main: '#4055B2',
+        },
+        secondary: { main: '#4055B2' },
+        contrastThreshold: 3,
+        tonalOffset: 0.2,
+    }
+});
+// ---- Admin Component Below ---- //
+
+class Admin extends Component {
+    state = {
+        feedback: [],
+    }
+
+    componentDidMount() {
+        this.feedbackGET();
+    }
+
+    feedbackGET = () => {
+        axios.get('/feedback')
+            .then((response) => {
+                console.log('Admin Page', response);
+                this.setState({
+                    feedback: response.data
+                })
+            }).catch((err) => {
+                console.log(err);
+            })
+    } // end GET
+
     render() {
-      return (
-        <Router>
-          <MuiThemeProvider theme={theme}>
-            <div className="mainBox">
-                <div>
-                    <h1>Administrator Page</h1>
-                </div>
-            </div>
-          </MuiThemeProvider>
-        </Router>
-      );
+        return (
+            <Router>
+                <MuiThemeProvider theme={theme}>
+                    <div className="mainBox">
+                        <div>
+                            <h1>Administrator Page</h1>
+                        </div>
+                        <div>
+                        <Link to='/'><Button variant='contained' color="primary">Home</Button></Link>
+                        </div>
+                        <br />
+                        <Paper className="Paper">
+                            <Table className="Table">
+                                <TableHead>
+                                    <TableRow>
+                                        <CustomTableCell align="left">Feeling</CustomTableCell>
+                                        <CustomTableCell align="left">Understanding</CustomTableCell>
+                                        <CustomTableCell align="left">Support</CustomTableCell>
+                                        <CustomTableCell align="left">Comments</CustomTableCell>
+                                    </TableRow>
+                                </TableHead>
+                                <TableBody className="display">
+                                    {this.state.feedback.map((item) => {
+                                        return (<TableRow key={item.id}>
+                                            <TableCell>{item.feeling}</TableCell>
+                                            <TableCell>{item.understanding}</TableCell>
+                                            <TableCell>{item.support}</TableCell>
+                                            <TableCell>{item.comments}</TableCell>
+                                        </TableRow>)
+                                    })}
+                                </TableBody>
+                            </Table>
+                        </Paper>
+                    </div>
+                </MuiThemeProvider>
+            </Router>
+        );
     } // end render
-  } // end Submit Componenet
-  
-  const mapReduxStoreToProps = (reduxStore) => ({
+} // end Submit Componenet
+
+const mapReduxStoreToProps = (reduxStore) => ({
     reduxStore
-  });
-  export default connect(mapReduxStoreToProps)(Admin);
+});
+export default withStyles(styles)(connect(mapReduxStoreToProps)(Admin));
