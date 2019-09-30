@@ -39,9 +39,10 @@ const theme = createMuiTheme({
         tonalOffset: 0.2,
     }
 });
-// ---- Admin Component Below ---- //
 
+// ---- Admin Component Below ---- //
 class Admin extends Component {
+
     state = {
         feedback: [],
     }
@@ -62,6 +63,14 @@ class Admin extends Component {
             })
     } // end GET
 
+    feedbackDELETE = () => {
+        console.log('Delete clicked');   
+    }
+
+    feedbackPUT = () => {
+        console.log('Flagged clicked')
+    }
+
     render() {
         return (
             <Router>
@@ -71,7 +80,7 @@ class Admin extends Component {
                             <h1>Administrator Page</h1>
                         </div>
                         <div>
-                        <Link to='/'><Button variant='contained' color="primary">Home</Button></Link>
+                            <Link to='/'><Button variant='contained' color="primary">Home</Button></Link>
                         </div>
                         <br />
                         <Paper className="Paper">
@@ -87,17 +96,15 @@ class Admin extends Component {
                                     </TableRow>
                                 </TableHead>
                                 <TableBody className="display" >
-                                    
                                     {this.state.feedback.map((item) => {
                                         return (<TableRow key={item.id} >
                                             <CustomTableCell>{item.feeling}</CustomTableCell>
                                             <CustomTableCell>{item.understanding}</CustomTableCell>
                                             <CustomTableCell>{item.support}</CustomTableCell>
                                             <CustomTableCell>{item.comments}</CustomTableCell>
-                                            <TableCell><Button variant='contained' color="primary">Flag</Button></TableCell>
-                                            <TableCell><Button variant='contained' color="secondary">Delete</Button></TableCell>
-                                        </TableRow>)
-                                    })}
+                                            <TableCell><Button variant='contained' color="default" onClick={this.feedbackPUT}>Flag</Button></TableCell>
+                                            <TableCell><Button variant='contained' color="secondary" onClick={this.feedbackDELETE}>Delete</Button></TableCell>
+                                        </TableRow>)})}
                                 </TableBody>
                             </Table>
                         </Paper>
