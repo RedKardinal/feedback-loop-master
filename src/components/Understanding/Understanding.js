@@ -132,7 +132,7 @@ class Understanding extends Component {
                 }}/>
             </div>
             <div className="col2">
-              <h3>I've completely understand</h3>
+              <h3>I completely understand</h3>
             </div>
           </div>
           <div className="buttons">

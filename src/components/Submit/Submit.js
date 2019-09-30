@@ -23,10 +23,6 @@ const theme = createMuiTheme({
 // ---- Submit Component Below ---- //
 class Submit extends Component {
 
-  componentDidMount = () => {
-    console.log(this.props.reduxStore.cartReducer);
-  }
-
   submitPOST = () => {
     console.log('Submit button clicked!', this.props.reduxStore.cartReducer);
     let feedbackData = this.props.reduxStore.feedbackReducer
