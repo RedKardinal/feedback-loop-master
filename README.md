@@ -1,8 +1,6 @@
 # Project Name
 
-Basic Feedback Template
-
-[Project Instructions](./INSTRUCTIONS.md), this line may be removed once you have updated the README.md
+Basic 'Daily Feedback for Prime Digital Academy' Template
 
 ## Description
 

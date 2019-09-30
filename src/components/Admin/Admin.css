@@ -1,0 +1,9 @@
+.mainBox {
+    vertical-align: middle;
+    border: #2c003e 5px outset;
+    margin: 20px; 
+    background-color: #51dacf;
+    padding: 20px;
+    border-radius: 25px;
+    box-shadow: 5px 10px;
+}

@@ -12,6 +12,7 @@ import Support from '../Support/Support';
 import Comments from '../Comments/Comments';
 import Submit from '../Submit/Submit';
 import Finished from '../Finished/Finished';
+import Admin from '../Admin/Admin';
 // ---- Material UI ---- //
 import 'typeface-roboto';
 // ---- App Component Below ---- //
@@ -36,6 +37,7 @@ class App extends Component {
             <Route path='/Comments' render={() => <Comments />} />
             <Route path='/Submit' render={() => <Submit />} />
             <Route path='/Finished' render={() => <Finished />} />
+            <Route path='/Admin' render={() => <Admin />} />      
           </div>
         </div>
       </Router>
