@@ -8,22 +8,28 @@ import registerServiceWorker from './registerServiceWorker';
 import { createStore, combineReducers } from 'redux';
 import { Provider } from 'react-redux';
 // ---- Reduce Code ---- //
-const feedbackReducer = (state = [], action) => {
+const feedbackFORM = {
+    feelings: '',
+    understadning: '',
+    support: '',
+    comments: '',
+}
+const feedbackReducer = (state = feedbackFORM, action) => {
     switch (action.type) {
         case 'SET_FEELINGS':
-            state = [...state, action.payload]
+            state.feelings = action.payload
             return state
         case 'SET_UNDERSTANDING':
-            state = [...state, action.payload]
+            state.understanding = action.payload
             return state
         case 'SET_SUPPORT':
-            state = [...state, action.payload]
+            state.support = action.payload
             return state
         case 'SET_COMMENTS':
-            state = [...state, action.payload]
+            state.comments = action.payload
             return state
         case 'CLEAR':
-            state = []
+            state = feedbackFORM
             return state
         default: return state
     } // END switch

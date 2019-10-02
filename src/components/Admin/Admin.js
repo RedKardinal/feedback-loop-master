@@ -50,7 +50,8 @@ class Admin extends Component {
     componentDidMount() {
         this.feedbackGET();
     }
-
+    
+    // ---- GET ---- //
     feedbackGET = () => {
         axios.get('/feedback')
             .then((response) => {
@@ -63,13 +64,30 @@ class Admin extends Component {
             })
     } // end GET
 
-    feedbackDELETE = () => {
-        console.log('Delete clicked');   
-    }
+    // // ---- PUT ---- //
+    // feedbackPUT = (boolean, id) => {
+    //     console.log('Flagged clicked')
+    //     let thing = !boolean;
+    //     axios.put('/feedback/' + id + "/" + thing)
+    //         .then((result) => {
+    //             this.getFeedback();
+    //         }).catch((error) => {
+    //             console.log('Error in PUT', error);
+    //         })
+    // }
 
-    feedbackPUT = () => {
-        console.log('Flagged clicked')
-    }
+    // // ---- DELETE ---- //
+    // feedbackDELETE = (id) => {
+    //     console.log('Delete clicked');   
+    //     if (window.confirm('Are you sure?')) {
+    //         axios.delete('/feedback/' + id)
+    //         .then((result) => {
+    //             this.getFeedback();
+    //         }).catch((error) => {
+    //             console.log('Error in Delete', error);
+    //         })
+    //     }
+    // }
 
     render() {
         return (

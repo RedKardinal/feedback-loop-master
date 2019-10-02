@@ -10,7 +10,7 @@ router.post('/', (req, res) => {
     // Sanitize POST //
     const queryText = `INSERT INTO "feedback" ("feeling", "understanding", "support", "comments") VALUES ($1, $2, $3, $4);`
     //update VALUES to utilize object in req.body (above)
-    pool.query(queryText, [feedback[0], feedback[1], feedback[2], feedback[3]])
+    pool.query(queryText, [feedback.feelings, feedback.understanding, feedback.support, feedback.comments])
     .then((result) => {
         res.sendStatus(201);
     }).catch((error) => { 
@@ -33,5 +33,31 @@ router.get('/',(req,res)=>{
         res.sendStatus(500);
     });
 }); // end GET
+
+// ---- DELETE ---- //
+// router.delete('/:id',(req,res)=>{
+//     let id = req.params.id
+//     const queryText = 'DELETE FROM "feedback" WHERE "id" = $1;';
+//     pool.query(queryText,[id])
+//     .then((result)=>{
+//         res.sendStatus(202)
+//     }).catch((err)=>{
+//         res.sendStatus(500)
+//         console.log(err);
+//     });
+// })
+
+// ---- PUT ---- //
+// router.put('/:id/:boolean',(req,res)=>{
+//     let id = req.params.id
+//     let boolean = req.params.boolean
+//     const queryText = 'UPDATE "feedback" SET "flagged" = $1 WHERE "id" = $2;';
+//     pool.query(queryText,[boolean,id])
+//     .then((result)=>{
+//         res.sendStatus(202);
+//     }).catch((err)=>{
+//         console.log(err);
+//     })
+// })
 
 module.exports = router;

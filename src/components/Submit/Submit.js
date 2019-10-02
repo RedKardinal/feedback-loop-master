@@ -24,7 +24,7 @@ const theme = createMuiTheme({
 class Submit extends Component {
 
   submitPOST = () => {
-    console.log('Submit button clicked!', this.props.reduxStore.cartReducer);
+    console.log('Submit button clicked!', this.props.reduxStore.feedbackReducer);
     let feedbackData = this.props.reduxStore.feedbackReducer
     // 
     axios.post('/feedback', feedbackData)
@@ -32,7 +32,7 @@ class Submit extends Component {
         console.log('Submit Page', response);
 
       }).catch(error => {
-        console.log('Error in the POST submit', error);
+        console.log('Error in the POST submit.js', error);
       })
     // clear reducer fields
     this.props.dispatch({ type: 'CLEAR' })
@@ -47,20 +47,21 @@ class Submit extends Component {
               Please review your feedback before submitting.
             </h2>
             <h3>
-              Feeling: {this.props.reduxStore.feedbackReducer[0]} / 5
+              Feeling: {this.props.reduxStore.feedbackReducer.feelings} / 5
             </h3>
             <h3>
-              Understanding: {this.props.reduxStore.feedbackReducer[1]} / 5
+              Understanding: {this.props.reduxStore.feedbackReducer.understanding} / 5
             </h3>
             <h3>
-              Support: {this.props.reduxStore.feedbackReducer[2]} / 5
+              Support: {this.props.reduxStore.feedbackReducer.support} / 5
             </h3>
             <h3>
-              Comments: {this.props.reduxStore.feedbackReducer[3]}
+              Comments: {this.props.reduxStore.feedbackReducer.comments}
             </h3>
             <br/>
             <div className="buttons">
-              <Link to='/Finished'><Button onClick={this.submitPOST} variant='contained' color="primary">Submit</Button></Link>
+            <Button onClick={this.submitPOST} variant='contained' color="primary">Submit</Button>
+              <Link to='/Finished' ><Button>Go on</Button></Link>
             </div>
           </div>
         </MuiThemeProvider>
