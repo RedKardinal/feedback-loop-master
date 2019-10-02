@@ -61,6 +61,11 @@ class Understanding extends Component {
   handleClick = (event) => {
     this.props.dispatch({ type: 'SET_UNDERSTANDING', payload: this.state.understanding })
     console.log('From Understanding', this.state.understanding);
+    this.props.history.push('/Support')
+  }
+
+  handleBack = () => {
+    console.log('Back!'); 
   }
 
   render() {

@@ -19,8 +19,15 @@ const theme = createMuiTheme({
         tonalOffset: 0.2,
     }
 });
+
 // ---- Home Component Below ---- //
 class Finished extends Component {
+
+    handleClick = () => {
+        console.log('Next!');
+        this.props.history.push('/')
+    }
+    
     render() {
         return (
             <Router>
@@ -31,7 +38,7 @@ class Finished extends Component {
                         </h2>
                         <br />
                         <br />
-                        <Link to='/'><Button variant='contained' color="primary">Leave new feedback</Button></Link>
+                        <Button onClick={this.handleClick} variant='contained' color="primary">Leave new feedback</Button>
                         <br />
                         <br />
                     </div>

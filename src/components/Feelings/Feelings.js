@@ -61,6 +61,7 @@ class Feelings extends Component {
   handleClick = (event) => {
     this.props.dispatch({ type: 'SET_FEELINGS', payload: this.state.feelings })
     console.log('From Feeling', this.state.feelings);
+    this.props.history.push('/Understanding')
   }
 
   render() {

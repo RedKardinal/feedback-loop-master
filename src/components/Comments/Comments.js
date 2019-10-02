@@ -38,6 +38,11 @@ class Support extends Component {
   handleClick = (event) => {
     this.props.dispatch({ type: 'SET_COMMENTS', payload: this.state.comments })
     console.log('From Feeling', this.state.comments);
+    this.props.history.push('/Submit')
+  }
+
+  handleBack = () => {
+    console.log('Back!'); 
   }
 
   render() {
@@ -61,7 +66,8 @@ class Support extends Component {
             </div>
             <br />
             <div className="buttons">
-              <Link to='/Submit'><Button variant='contained' color="primary" disabled={this.state.button} onClick={this.handleClick}>Next</Button></Link>
+              <Button onClick={this.handleBack} variant='contained' color="primary">Back</Button>
+              <Button variant='contained' color="primary" disabled={this.state.button} onClick={this.handleClick}>Next</Button>
             </div>
           </div>
         </MuiThemeProvider>

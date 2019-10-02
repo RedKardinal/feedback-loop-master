@@ -38,6 +38,10 @@ class Submit extends Component {
     // clear reducer fields
   } // end submitPOST
 
+  handleBack = () => {
+    console.log('Back!'); 
+  }
+
   render() {
     return (
       <Router>

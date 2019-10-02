@@ -64,6 +64,10 @@ class Support extends Component {
     console.log('From Support', this.state.support);
   }
 
+  handleBack = () => {
+    console.log('Back!'); 
+  }
+
   render() {
     const { classes } = this.props;
 
@@ -137,6 +141,7 @@ class Support extends Component {
             </div>
           </div>
           <div className="buttons">
+            <Button onClick={this.handleBack} variant='contained' color="primary">Back</Button>
             <Link to='/Comments'><Button onClick={this.handleClick} variant='contained' color="primary">Next</Button></Link>
           </div>
           <div className="boxFooter">
