@@ -30,14 +30,14 @@ class App extends Component {
           </header>
           <br />
           <div className="routes">
-            <Route path='/' exact render={() => <Home />} />
-            <Route path='/Feelings' exact render={() => <Feelings />} />
-            <Route path='/Understanding' exact render={() => <Understanding />} />
-            <Route path='/Support' render={() => <Support />} />
-            <Route path='/Comments' render={() => <Comments />} />
-            <Route path='/Submit' render={() => <Submit />} />
-            <Route path='/Finished' render={() => <Finished />} />
-            <Route path='/Admin' render={() => <Admin />} />      
+            <Route exact path='/' component={Home}></Route>
+            <Route path='/Feelings' component={Feelings}></Route>
+            <Route path='/Understanding' component={Understanding}></Route>
+            <Route path='/Support' component={Support}></Route>
+            <Route path='/Comments' component={Comments}></Route>
+            <Route path='/Submit' component={Submit}></Route>
+            <Route path='/Finished' component={Finished}></Route>
+            <Route path='/Admin' component={Admin}></Route>
           </div>
         </div>
       </Router>

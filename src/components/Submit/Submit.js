@@ -30,12 +30,12 @@ class Submit extends Component {
     axios.post('/feedback', feedbackData)
       .then((response) => {
         console.log('Submit Page', response);
-
+        this.props.dispatch({ type: 'CLEAR' })
       }).catch(error => {
         console.log('Error in the POST submit.js', error);
       })
+      this.props.history.push('/Finished')
     // clear reducer fields
-    this.props.dispatch({ type: 'CLEAR' })
   } // end submitPOST
 
   render() {
@@ -61,7 +61,7 @@ class Submit extends Component {
             <br/>
             <div className="buttons">
             <Button onClick={this.submitPOST} variant='contained' color="primary">Submit</Button>
-              <Link to='/Finished' ><Button>Go on</Button></Link>
+              {/* <Link to='/Finished' ><Button>Go on</Button></Link> */}
             </div>
           </div>
         </MuiThemeProvider>

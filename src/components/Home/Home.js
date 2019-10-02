@@ -20,7 +20,12 @@ const theme = createMuiTheme({
   }
 });
 // ---- Home Component Below ---- //
+
 class Home extends Component {
+  handleClick = () => {
+    this.props.history.push('/Feelings')
+}
+
   render() {
     return (
       <Router>
@@ -30,7 +35,7 @@ class Home extends Component {
               Please give us some feedback on how the week went.
             </h2>
             <br />
-            <Link to='/Feelings'><Button variant='contained' color="primary">Let's Begin!</Button></Link>
+            <Button onClick={this.handleClick} variant='contained' color="primary">Let's Begin!</Button>
             <h2>
             </h2>
           </div>

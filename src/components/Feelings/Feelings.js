@@ -136,7 +136,7 @@ class Feelings extends Component {
             </div>
           </div>
           <div>
-            <Link to='/Understanding'><Button onClick={this.handleClick} variant='contained' color="primary">Next</Button></Link>
+            <Button onClick={this.handleClick} variant='contained' color="primary">Next</Button>
           </div>
           <div className="boxFooter">
           </div>
