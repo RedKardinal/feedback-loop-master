@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import axios from 'axios';
-import { HashRouter as Router, Link } from 'react-router-dom';
+import { HashRouter as Router } from 'react-router-dom';
 // ---- Import CSS ---- //
 import './Submit.css';
 // ---- Material UI ------ // 
@@ -35,11 +35,11 @@ class Submit extends Component {
         console.log('Error in the POST submit.js', error);
       })
       this.props.history.push('/Finished')
-    // clear reducer fields
   } // end submitPOST
 
   handleBack = () => {
     console.log('Back!'); 
+    this.props.history.push('/Comments')
   }
 
   render() {
@@ -64,8 +64,8 @@ class Submit extends Component {
             </h3>
             <br/>
             <div className="buttons">
+            <Button onClick={this.handleBack} variant='contained' color="primary">Back</Button>
             <Button onClick={this.submitPOST} variant='contained' color="primary">Submit</Button>
-              {/* <Link to='/Finished' ><Button>Go on</Button></Link> */}
             </div>
           </div>
         </MuiThemeProvider>

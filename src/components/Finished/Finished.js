@@ -1,7 +1,7 @@
 // ---- Import Redux, Routers, & React ---- //
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { HashRouter as Router, Link } from 'react-router-dom';
+import { HashRouter as Router } from 'react-router-dom';
 // ---- Import CSS ---- //
 import './Finished.css';
 // ---- Material UI ------ // 

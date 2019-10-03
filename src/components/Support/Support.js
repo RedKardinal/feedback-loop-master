@@ -1,6 +1,6 @@
 // ---- Import Redux, Routers, & React ---- //
 import React, { Component } from 'react';
-import { HashRouter as Router, Link } from 'react-router-dom';
+import { HashRouter as Router } from 'react-router-dom';
 import { connect } from 'react-redux';
 // ---- Import CSS ---- //
 import './Support.css';
@@ -62,10 +62,12 @@ class Support extends Component {
   handleClick = (event) => {
     this.props.dispatch({ type: 'SET_SUPPORT', payload: this.state.support })
     console.log('From Support', this.state.support);
+    this.props.history.push('/Comments')
   }
 
   handleBack = () => {
-    console.log('Back!'); 
+    // console.log('Back!'); 
+    this.props.history.push('/Understanding')
   }
 
   render() {
@@ -142,7 +144,7 @@ class Support extends Component {
           </div>
           <div className="buttons">
             <Button onClick={this.handleBack} variant='contained' color="primary">Back</Button>
-            <Link to='/Comments'><Button onClick={this.handleClick} variant='contained' color="primary">Next</Button></Link>
+            <Button onClick={this.handleClick} variant='contained' color="primary">Next</Button>
           </div>
           <div className="boxFooter">
           </div>

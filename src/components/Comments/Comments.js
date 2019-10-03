@@ -1,6 +1,6 @@
 // ---- Import Redux, Routers, & React ---- //
 import React, { Component } from 'react';
-import { HashRouter as Router, Link } from 'react-router-dom';
+import { HashRouter as Router } from 'react-router-dom';
 import { connect } from 'react-redux';
 // ---- Import CSS ---- //
 import './Comments.css';
@@ -42,7 +42,8 @@ class Support extends Component {
   }
 
   handleBack = () => {
-    console.log('Back!'); 
+    // console.log('Back!'); 
+    this.props.history.push('/Support')
   }
 
   render() {

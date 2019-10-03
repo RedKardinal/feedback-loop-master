@@ -1,6 +1,6 @@
 // ---- Import Redux, Routers, & React ---- //
 import React, { Component } from 'react';
-import { HashRouter as Router, Link } from 'react-router-dom';
+import { HashRouter as Router } from 'react-router-dom';
 import { connect } from 'react-redux';
 // ---- Import CSS ---- //
 import './Understanding.css';
@@ -65,7 +65,8 @@ class Understanding extends Component {
   }
 
   handleBack = () => {
-    console.log('Back!'); 
+    // console.log('Back!'); 
+    this.props.history.push('/Feelings')
   }
 
   render() {
@@ -142,7 +143,7 @@ class Understanding extends Component {
           </div>
           <div className="buttons">
             <Button onClick={this.handleBack} variant='contained' color="primary">Back</Button>
-            <Link to='/Support'><Button onClick={this.handleClick} variant='contained' color="primary">Next</Button></Link>
+            <Button onClick={this.handleClick} variant='contained' color="primary">Next</Button>
           </div>
           <div className="boxFooter">
           </div>
