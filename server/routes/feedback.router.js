@@ -35,29 +35,29 @@ router.get('/',(req,res)=>{
 }); // end GET
 
 // ---- DELETE ---- //
-// router.delete('/:id',(req,res)=>{
-//     let id = req.params.id
-//     const queryText = 'DELETE FROM "feedback" WHERE "id" = $1;';
-//     pool.query(queryText,[id])
-//     .then((result)=>{
-//         res.sendStatus(202)
-//     }).catch((err)=>{
-//         res.sendStatus(500)
-//         console.log(err);
-//     });
-// })
+router.delete('/:id',(req,res)=>{
+    let id = req.params.id
+    const queryText = 'DELETE FROM "feedback" WHERE "id" = $1;';
+    pool.query(queryText,[id])
+    .then((result)=>{
+        res.sendStatus(202)
+    }).catch((err)=>{
+        res.sendStatus(500)
+        console.log(err);
+    });
+})
 
 // ---- PUT ---- //
-// router.put('/:id/:boolean',(req,res)=>{
-//     let id = req.params.id
-//     let boolean = req.params.boolean
-//     const queryText = 'UPDATE "feedback" SET "flagged" = $1 WHERE "id" = $2;';
-//     pool.query(queryText,[boolean,id])
-//     .then((result)=>{
-//         res.sendStatus(202);
-//     }).catch((err)=>{
-//         console.log(err);
-//     })
-// })
+router.put('/:id/:boolean',(req,res)=>{
+    let id = req.params.id
+    let boolean = req.params.boolean
+    const queryText = 'UPDATE "feedback" SET "flagged" = $1 WHERE "id" = $2;';
+    pool.query(queryText,[boolean,id])
+    .then((result)=>{
+        res.sendStatus(202);
+    }).catch((err)=>{
+        console.log(err);
+    })
+})
 
 module.exports = router;

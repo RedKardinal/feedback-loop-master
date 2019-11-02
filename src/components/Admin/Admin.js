@@ -64,30 +64,30 @@ class Admin extends Component {
             })
     } // end GET
 
-    // // ---- PUT ---- //
-    // feedbackPUT = (boolean, id) => {
-    //     console.log('Flagged clicked')
-    //     let thing = !boolean;
-    //     axios.put('/feedback/' + id + "/" + thing)
-    //         .then((result) => {
-    //             this.getFeedback();
-    //         }).catch((error) => {
-    //             console.log('Error in PUT', error);
-    //         })
-    // }
+    // ---- PUT ---- //
+    feedbackPUT = (boolean, id) => {
+        console.log('Flagged clicked')
+        let thing = !boolean;
+        axios.put('/feedback/' + id + "/" + thing)
+            .then((result) => {
+                this.getFeedback();
+            }).catch((error) => {
+                console.log('Error in PUT', error);
+            })
+    }
 
-    // // ---- DELETE ---- //
-    // feedbackDELETE = (id) => {
-    //     console.log('Delete clicked');   
-    //     if (window.confirm('Are you sure?')) {
-    //         axios.delete('/feedback/' + id)
-    //         .then((result) => {
-    //             this.getFeedback();
-    //         }).catch((error) => {
-    //             console.log('Error in Delete', error);
-    //         })
-    //     }
-    // }
+    // ---- DELETE ---- //
+    feedbackDELETE = (id) => {
+        console.log('Delete clicked');   
+        if (window.confirm('Are you sure?')) {
+            axios.delete('/feedback/' + `${id}`)
+            .then((result) => {
+                this.getFeedback();
+            }).catch((error) => {
+                console.log('Error in Delete', error);
+            })
+        }
+    }
 
     render() {
         return (

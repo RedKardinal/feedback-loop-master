@@ -1,24 +1,37 @@
-# Project Name
+# Feedback Collection Form
 
-Basic 'Daily Feedback for Prime Digital Academy' Template
+Basic 'Daily Feedback' form built for Prime Digital Academy. This template asks participants about their feelings, understanding, support, and comments. It sends forms to an admin page to be viewed and edited. This can be view at http://localhost:3000/Admin. 
 
-## Description
+## Built With...
 
-Your project description goes here. What problem did you solve? How did you solve it?
+React, JavaScript, Node, Postgresl and Material-UI.
 
-This is a Basic feedback template that asks participants about their feelings, 
-understanding, support, and comments. It sends forms to an admin page to be 
-reviewed. This can be view at http://localhost:3000/Admin. 
-
-## Install
+## Start up
 
 Create your database and tables using the provided data.sql file.
 
-npm install
-npm run server
+1. npm install
 
-Now that the server is running, 
+2. npm run server
 
-npm run client
+3. npm run client
 
-## ------ ##
+
+## Screenshots
+
+Radio switch question
+
+<img src="Screenshots/feedBack1.png" width="50%"/>
+
+Text field question
+
+<img src="Screenshots/feedBack2.png" width="50%"/>
+
+Submission review 
+ 
+<img src="Screenshots/feedBack3.png" width="50%"/>
+
+Admin page
+
+<img src="Screenshots/feedBack4.png" width="50%"/>
+
